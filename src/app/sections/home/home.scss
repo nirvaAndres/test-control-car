@@ -1,0 +1,36 @@
+@use '../../utils/custom-general-styles/colors' as *;
+
+.home-section {
+    .cont-home {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 20px 0;
+        padding: 20px;
+
+        h1 {
+            text-align: center;
+            color: $gray-ligth-car;
+            font-weight: 700;
+            text-shadow: 0 3px 5px $shadow;
+            margin: 32px 0 8px 0;
+        }
+        p {
+            margin: 0;
+            color: $gray-ligth-car;
+            text-align: justify;
+        }
+        .contact-support {
+            color: $gray-ligth-car;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            gap: 0 4px;
+            margin: 0 auto;
+            width: 300px;
+            height: auto;
+            overflow: hidden;
+        }
+    }
+}

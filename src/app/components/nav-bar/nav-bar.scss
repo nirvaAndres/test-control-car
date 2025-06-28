@@ -1,0 +1,58 @@
+
+@use '../../utils/custom-general-styles/colors' as *;
+
+.main-navbar {
+    display: block;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: fixed;
+    z-index: 9;
+    background-color: $blue-control-car-bg;
+    align-items: center;
+    flex: 1;
+
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        height: auto;
+        width: auto;
+        overflow: hidden;
+        padding: 10px;
+
+        .navbar-logo {
+            width: 7%;
+            min-width: 90px;
+            
+            .logo {
+                background-image: url('../../../../public/assets/imgs/logo-control-car.avif');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 80px;
+                height: 40px;
+            }
+        }
+
+        h2 {
+            display: flex;
+            width: 63%;
+            color: $white-control-car;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        button {
+            width: 30%;
+    
+            mat-icon {
+                display: block;
+                float: right;
+                color: $white-control-car;
+            }
+        }
+    }
+}

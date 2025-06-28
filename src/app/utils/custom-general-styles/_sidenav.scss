@@ -1,0 +1,38 @@
+@use './colors' as *;
+@use '../mixins/sidenav' as *;
+
+.sidenav-container {
+    height: 100vh;
+
+    mat-sidenav {
+        padding-top: 60px;
+        height: 100vh;
+        width: 300px;
+        background-color: $blue-control-car-bg;
+        border-radius: 0;
+
+        mat-nav-list {
+            .mat-mdc-list-item {   
+                border-radius: 0;
+                border-bottom: 1px solid $white-control-car;
+                span.mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
+                    color: $white-control-car;
+                    display: flex;
+                    gap: 0 4px;
+                    font-size: 14px;
+                }
+                &:hover, &:focus {
+                    @include active-nav-style;
+                }
+            }  
+        }
+    }
+
+    mat-sidenav-content.mat-drawer-content.mat-sidenav-content {
+        padding-top: 60px;
+    }
+}
+
+.mat-mdc-list-item.mdc-list-item.mat-mdc-list-item-interactive.active.mat-mdc-list-item-single-line.mdc-list-item--with-one-line  {
+    @include active-nav-style;
+}

@@ -1,0 +1,78 @@
+
+@use '../../utils/custom-general-styles/colors' as *;
+
+.mechanical-workshop {
+    display: flex;
+    flex-direction: column;
+    gap: 36px 0;
+
+    .title {
+        color: $gray-ligth-car;
+        font-weight: bold;
+        border-bottom: 1px solid $blue-ligth-car;
+    }
+
+    .dinamicText {
+        h2 {
+            font-size: 18px;
+            color: $gray-ligth-car;
+            font-weight: bold;
+            margin: 0;
+        }
+        p {
+            font-size: 16px;
+            color: $gray-ligth-car;
+        }
+    }
+
+    .cont-workshops-area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px 16px;
+
+        .card-area {
+            border: 1px solid $shadow;
+            padding: 32px;
+            min-width: 350px;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 10px 10px 10px $shadow;
+
+            .sub-title {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 0 4px;
+
+                h2 {
+                    margin: 0;
+                }
+            }
+            p {
+                text-align: center;
+            }
+        }
+    }
+    .new-flow {
+        p {
+            color: $gray-ligth-car;
+            text-align: left;
+        }
+    }
+}
+
+@media (max-width: 1080px) {
+    .mechanical-workshop {
+        .cont-workshops-area {
+            flex-direction: column;
+
+            .card-area {
+                min-width: 300px;
+            }
+        }
+    }
+}

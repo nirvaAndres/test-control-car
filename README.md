@@ -1,60 +1,83 @@
-# TestControlCar
+# 🚗 Angular Demo – Propuesta de Mejora para Flujo de Cotización en Taller Automotriz
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0-next.3.
+> **Versión Angular CLI**: `20.1.0-next.3`  
+> ⚠️ Esta versión corresponde a una *release candidate* no estable. Se ha utilizado intencionalmente dado que fue parte del requerimiento inicial, aunque no es recomendable para entornos productivos en este momento.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🧩 Propósito del Proyecto
+
+Este demo tiene como objetivo ilustrar una propuesta de mejora para el flujo actual de cotización de mantención o reparación de vehículos en una plataforma existente. Surge como respuesta a una solicitud de análisis sobre la experiencia del usuario y la arquitectura funcional de un sistema previamente observado en un video suministrado.
+
+---
+
+## 🧠 Observaciones del Sistema Actual
+
+Durante el análisis del video, se identificaron los siguientes puntos críticos:
+
+- Uso excesivo del **chat** como eje central de múltiples funcionalidades (cotización, agendamiento, manejo de stock, etc.), lo que genera un producto difícil de usar, mantener y escalar.
+- El **chat permite conversaciones internas entre colegas que son visibles por el cliente**, lo que representa una falla de experiencia y privacidad.
+- El sistema presenta una arquitectura fuertemente acoplada, lo cual puede derivar en un producto monolítico, poco predecible y con una curva de aprendizaje alta para nuevos usuarios.
+
+---
+
+## ✅ Recomendaciones Generales
+
+1. **Definir el producto claramente**:  
+   Determinar si se busca crear un **chat**, una **plataforma web de cotizaciones**, una **PWA**, o una combinación estructurada de estos.
+
+2. **Arquitectura Front-End**:
+   - Adoptar un enfoque **modular**, separando las funcionalidades en módulos independientes.
+   - Evaluar la implementación de **Micro Frontends** para facilitar la escalabilidad y mantenibilidad.
+
+3. **Arquitectura Back-End**:
+   - Emplear **microservicios** o **Backends For Frontends (BFF)** para desacoplar responsabilidades y reducir la complejidad.
+
+---
+
+## 🧪 Qué se implementó en este demo
+
+Este demo es una prueba conceptual centrada en segmentar funcionalidades en **secciones modulares**, con el objetivo de facilitar el mantenimiento y los ciclos de despliegue.
+
+### Flujo propuesto para cotización de reparación:
+
+1. **Solicitud de cotización**
+2. **Cotización pendiente de aprobación**
+3. **Cotización aprobada e ingreso del vehículo al taller**
+4. **Gestión de inventario o stock** (en módulo independiente)
+
+> **Nota**: En este prototipo, solo se crearon componentes, pero la intención es evolucionarlos hacia módulos funcionales y aislables.
+
+### Características adicionales:
+
+- Soporte para múltiples talleres, cada uno especializado en distintos tipos de vehículos o reparaciones.
+- Módulo separado para comunicación ATC (**Atención al Cliente**) mediante un chat validado por roles y áreas.
+
+---
+
+## 📉 Análisis Crítico de Interfaz (Anexo 1)
+
+### Errores identificados:
+
+- El **usuario cliente** tiene acceso a **conversaciones internas** que no le corresponden, lo cual compromete la privacidad y genera confusión.
+
+### Propuesta de mejora:
+
+- Separar la aplicación en **dos módulos de Angular distintos**:
+  - Uno para **áreas internas** (gestión, mecánicos, etc.)
+  - Otro exclusivo para **ATC y comunicación con clientes**, con validación adecuada según roles y permisos.
+
+---
+
+## 📱 Consideraciones finales
+
+- Este demo no contempla versiones móviles debido a limitaciones de tiempo.
+- La intención fue establecer una base de exploración modular que pueda escalar en futuras fases de desarrollo.
+
+---
+
+## 🛠️ Instalación y ejecución
 
 ```bash
+npm install
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# test-control-car
